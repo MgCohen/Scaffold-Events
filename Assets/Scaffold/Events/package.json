@@ -1,0 +1,12 @@
+{
+  "name": "com.scaffold.events",
+  "version": "0.0.1",
+  "displayName": "Scaffold Events",
+  "description": "Handles communication between classes using Signals and Requests",
+  "unity": "2018.4",
+  "author": {
+    "name": "Matheus",
+    "email": "matheus@hotmail.com",
+    "url": "https://www.matheuscohen.com.br"
+  }
+}
