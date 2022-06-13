@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.scaffold.builder": {
+      "version": "https://github.com/MgCohen/Scaffold-Builder.git?path=/Assets/Scaffold/Builder",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "f49ad14596834f39baa112d07a616648e1eb0545"
+    },
     "com.unity.2d.animation": {
       "version": "5.0.10",
       "depth": 0,
