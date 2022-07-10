@@ -1,5 +1,19 @@
 {
   "dependencies": {
+    "com.scaffold.builder": {
+      "version": "https://github.com/MgCohen/Scaffold.git?path=/Assets/Scaffold/Builder",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "eda1d83438e001ddee6c0a3499915ec91fd7abfb"
+    },
+    "com.scaffold.core": {
+      "version": "https://github.com/MgCohen/Scaffold.git?path=/Assets/Scaffold/Core",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "eda1d83438e001ddee6c0a3499915ec91fd7abfb"
+    },
     "com.unity.2d.animation": {
       "version": "5.0.10",
       "depth": 0,

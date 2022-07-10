@@ -1,0 +1,16 @@
+{
+  "name": "com.scaffold.events",
+  "displayName": "Scaffold Events",
+  "description": "Handles interactions between modules and systems through signals and requests",
+  "unity": "2020.1",
+  "path": "https://github.com/MgCohen/Scaffold-Events.git?path=/Assets/Scaffold/Events",
+  "version": "0.0.4",
+  "author": {
+    "name": "Matheus",
+    "email": "matheus@hotmail.com",
+    "url": "https://www.matheuscohen.com.br"
+  },
+  "requiredModules": [],
+  "requiredDefines": [],
+  "installDefines": []
+}
