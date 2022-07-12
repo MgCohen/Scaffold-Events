@@ -12,5 +12,7 @@
   },
   "requiredModules": [],
   "requiredDefines": [],
-  "installDefines": []
+  "installDefines": [
+    "USE_SCAFFOLD_EVENTS"
+  ]
 }

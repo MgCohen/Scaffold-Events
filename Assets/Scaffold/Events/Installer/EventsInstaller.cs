@@ -7,7 +7,7 @@ using System.Linq;
 using UnityEngine;
 using System;
 
-#if !USE_SCAFFOLD_EVENTS && !IS_SCAFFOLD_EVENTS
+#if !USE_SCAFFOLD_EVENTS
 namespace Scaffold.Events.Installer
 {
     internal class EventsInstaller
@@ -17,7 +17,7 @@ namespace Scaffold.Events.Installer
         private static string ValidationKey = "PROJECTVALIDATED";
 
         private static readonly string[] RequiredDefines = {  };
-        private static readonly string[] InstallDefines = {  };
+        private static readonly string[] InstallDefines = { "USE_SCAFFOLD_EVENTS" };
 
         [InitializeOnLoadMethod]
         private static void ValidatePackage()

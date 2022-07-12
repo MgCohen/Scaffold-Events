@@ -5,14 +5,21 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "eda1d83438e001ddee6c0a3499915ec91fd7abfb"
+      "hash": "d5bfaa5c5bfd9008cdffec8195b0a9e9c80f8b52"
     },
     "com.scaffold.core": {
       "version": "https://github.com/MgCohen/Scaffold.git?path=/Assets/Scaffold/Core",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "eda1d83438e001ddee6c0a3499915ec91fd7abfb"
+      "hash": "d5bfaa5c5bfd9008cdffec8195b0a9e9c80f8b52"
+    },
+    "com.scaffold.launcher": {
+      "version": "https://github.com/MgCohen/Scaffold.git?path=/Assets/Scaffold/Launcher",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "d5bfaa5c5bfd9008cdffec8195b0a9e9c80f8b52"
     },
     "com.unity.2d.animation": {
       "version": "5.0.10",

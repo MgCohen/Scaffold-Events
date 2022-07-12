@@ -2,6 +2,7 @@
   "dependencies": {
     "com.scaffold.builder": "https://github.com/MgCohen/Scaffold.git?path=/Assets/Scaffold/Builder",
     "com.scaffold.core": "https://github.com/MgCohen/Scaffold.git?path=/Assets/Scaffold/Core",
+    "com.scaffold.launcher": "https://github.com/MgCohen/Scaffold.git?path=/Assets/Scaffold/Launcher",
     "com.unity.2d.animation": "5.0.10",
     "com.unity.2d.pixel-perfect": "4.0.1",
     "com.unity.2d.psdimporter": "4.1.3",
