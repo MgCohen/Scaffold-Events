@@ -32,14 +32,14 @@ namespace Scaffold.Core.Events
             broker?.Register(type, callback);
         }
 
-        public static void Register<T>(Type type, Action callback) where T : ISignal
+        public static void Register(Type type, Action callback)
         {
-            broker?.Register<T>(type, callback);
+            broker?.Register(type, callback);
         }
 
         public static void Register<T>(Action callback) where T : ISignal, new()
         {
-            Register<T>(typeof(T), callback);
+            Register(typeof(T), callback);
         }
         public static void Register<T>(Action<T> callback) where T : ISignal, new()
         {
@@ -48,16 +48,16 @@ namespace Scaffold.Core.Events
 
         public static void Unregister<T>(Type type, Action<T> callback) where T : ISignal
         {
-            broker?.Unregister<T>(type, callback);
+            broker?.Unregister(type, callback);
         }
-        public static void Unregister<T>(Type type, Action callback) where T : ISignal
+        public static void Unregister(Type type, Action callback)
         {
-            broker?.Unregister<T>(type, callback);
+            broker?.Unregister(type, callback);
         }
 
         public static void Unregister<T>(Action callback) where T : ISignal, new()
         {
-            Unregister<T>(typeof(T), callback);
+            Unregister(typeof(T), callback);
         }
 
         public static void Unregister<T>(Action<T> callback) where T : ISignal, new()

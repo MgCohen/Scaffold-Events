@@ -96,5 +96,8 @@ namespace Scaffold.Core.Events.Signals
     public interface ISignalLedger
     {
         public void ClearLedger();
+
+        public void Register(Action callback);
+        public void Unregister(Action callback);
     }
 }

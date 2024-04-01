@@ -12,7 +12,7 @@ namespace Scaffold.Core.Events.Signals
         public void Raise<T>(T signal) where T : ISignal
         {
             Type type = signal.GetType();
-            SignalLedger<T> ledger = FetchLedger<T>(type);
+            SignalLedger<T> ledger = FetchLedger<T>();
 
             if(ledger == null)
             {
@@ -48,22 +48,17 @@ namespace Scaffold.Core.Events.Signals
                 return;
             }
 
-            SignalLedger<T> ledger = FetchLedger<T>(type);
+            SignalLedger<T> ledger = FetchLedger<T>();
             if(ledger == null)
             {
-                ledger = CreateLedger<T>(type);
+                ledger = CreateLedger<T>();
             }
             ledger.Register(callback);
         }
 
-        public void Register<T>(Type type, Action callback) where T:ISignal
+        public void Register(Type type, Action callback)
         {
-            if (!(typeof(ISignal).IsAssignableFrom(typeof(T))))
-            {
-                return;
-            }
-
-            if (type != typeof(T))
+            if (!(typeof(ISignal).IsAssignableFrom(type)))
             {
                 return;
             }
@@ -73,10 +68,10 @@ namespace Scaffold.Core.Events.Signals
                 return;
             }
 
-            SignalLedger<T> ledger = FetchLedger<T>(type);
+            ISignalLedger ledger = FetchLedger(type);
             if (ledger == null)
             {
-                ledger = CreateLedger<T>(type);
+                ledger = CreateLedger(type);
             }
             ledger.Register(callback);
         }
@@ -98,22 +93,17 @@ namespace Scaffold.Core.Events.Signals
                 return;
             }
 
-            SignalLedger<T> ledger = FetchLedger<T>(type);
+            SignalLedger<T> ledger = FetchLedger<T>();
             if (ledger == null)
             {
-                ledger = CreateLedger<T>(type);
+                ledger = CreateLedger<T>();
             }
             ledger.Unregister(callback);
         }
 
-        public void Unregister<T>(Type type, Action callback) where T : ISignal
+        public void Unregister(Type type, Action callback)
         {
-            if (!(typeof(ISignal).IsAssignableFrom(typeof(T))))
-            {
-                return;
-            }
-
-            if (type != typeof(T))
+            if (!(typeof(ISignal).IsAssignableFrom(type)))
             {
                 return;
             }
@@ -123,10 +113,10 @@ namespace Scaffold.Core.Events.Signals
                 return;
             }
 
-            SignalLedger<T> ledger = FetchLedger<T>(type);
+            ISignalLedger ledger = FetchLedger(type);
             if (ledger == null)
             {
-                ledger = CreateLedger<T>(type);
+                ledger = CreateLedger(type);
             }
             ledger.Unregister(callback);
         }
@@ -138,20 +128,29 @@ namespace Scaffold.Core.Events.Signals
                 ledger.ClearLedger();
             }
         }
+        private SignalLedger<T> FetchLedger<T>() where T : ISignal
+        {
+            return (SignalLedger<T>)FetchLedger(typeof(T));
+        }
 
-        private SignalLedger<T> FetchLedger<T>(Type type) where T:ISignal
+        private ISignalLedger FetchLedger(Type type)
         {
             if (_ledgers.ContainsKey(type) && _ledgers[type] != null)
             {
-                return (SignalLedger<T>)_ledgers[type];
+                return _ledgers[type];
             }
 
             return null;
         }
 
-        private SignalLedger<T> CreateLedger<T>(Type type)
+        private SignalLedger<T> CreateLedger<T>() where T : ISignal
         {
-            SignalLedger<T> ledger = new SignalLedger<T>();
+            return (SignalLedger<T>)CreateLedger(typeof(T));
+        }
+
+        private ISignalLedger CreateLedger(Type type)
+        {
+            ISignalLedger ledger = (ISignalLedger)Activator.CreateInstance(typeof(SignalLedger<>).MakeGenericType(type));
             _ledgers[type] = ledger;
             return ledger;
         }
